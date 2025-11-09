@@ -6,7 +6,7 @@
     <title>Wine Snap – Din AI-sommelier</title>
     <meta
       name="description"
-      content="Wine Snap hjälper dig att upptäcka, förstå och para dina favoritviner med AI-driven precision."
+      content="Wine Snap har samma gränssnitt som Wine Lens Snap – optimerat för att skanna vinflaskor och få AI-genererade rekommendationer."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
+    <div class="background" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+
+    <header class="site-header" id="top">
+      <div class="container header-bar">
         <a class="brand" href="#top" aria-label="Wine Snap startsida">
           <span class="brand-icon" aria-hidden="true"></span>
           <span class="brand-text">Wine Snap</span>
@@ -29,8 +35,8 @@
             <span class="visually-hidden">Visa meny</span>
           </button>
           <ul id="nav-links" class="nav-links" aria-expanded="false">
-            <li><a href="#funktioner">Funktioner</a></li>
-            <li><a href="#experiences">Upplevelse</a></li>
+            <li><a href="#funktioner">Lens-läge</a></li>
+            <li><a href="#upplevelse">Upplevelser</a></li>
             <li><a href="#community">Community</a></li>
             <li><a href="#ladda-ner">Ladda ned</a></li>
           </ul>
@@ -40,143 +46,151 @@
     </header>
 
     <main>
-      <section class="hero" id="top">
+      <section class="hero" id="hero">
         <div class="container hero-layout">
           <div class="hero-copy">
-            <span class="eyebrow">AI-drivet vinsinne</span>
+            <span class="eyebrow">Samma UI som Wine Lens Snap</span>
             <h1>
-              Wine Snap låter dig <span class="accent">skanna</span> vilken flaska som helst och få <span class="accent">direkt vininsikt</span>.
+              Skanna. Förstå. Para. Wine Snap replikerar hela <span class="accent">Wine Lens Snap-upplevelsen</span> för dina favoriter.
             </h1>
             <p>
-              Peka kameran mot etiketten och få en personlig rekommendation på sekunder. Utforska smakprofiler,
-              matcha middagen och bygg din digitala vinkällare utan ansträngning.
+              Vi har fört över varje detalj: glasiga paneler, varma gradienter, modulära kort och interaktiva kortkommandon. Resultatet är en välbekant, ultrasnabb vinscanner optimerad för Google-ekosystemet.
             </p>
             <div class="hero-actions">
               <a class="cta-button primary" href="#ladda-ner">Ladda ned appen</a>
-              <button class="ghost-button" type="button" data-scroll="#demo">Se hur det fungerar</button>
+              <button class="ghost-button" type="button" data-scroll="#funktioner">Se Lens-läget</button>
             </div>
-            <ul class="hero-stats" role="list">
-              <li>
-                <strong>250k+</strong>
-                <span>Vinflaskor skannade</span>
-              </li>
-              <li>
-                <strong>98%</strong>
-                <span>Nöjda vinälskare</span>
-              </li>
-              <li>
-                <strong>35</strong>
-                <span>Länder med datastöd</span>
-              </li>
-            </ul>
+            <dl class="hero-stats">
+              <div>
+                <dt>250k+</dt>
+                <dd>flaskor skannade i Lens-motorn</dd>
+              </div>
+              <div>
+                <dt>98%</dt>
+                <dd>nöjdhet från beta-användare</dd>
+              </div>
+              <div>
+                <dt>35</dt>
+                <dd>länder med lokaliserat innehåll</dd>
+              </div>
+            </dl>
           </div>
-          <figure class="hero-visual" aria-labelledby="hero-visual-caption">
-            <img src="assets/device-mockup.svg" alt="Wine Snap mobilapp" />
-            <figcaption id="hero-visual-caption">Personliga rekommendationer och smaknoter samlade i din hand.</figcaption>
-          </figure>
+          <div class="hero-visual" aria-labelledby="hero-visual-caption">
+            <div class="hero-device">
+              <div class="device-frame">
+                <div class="device-status">
+                  <span class="status-dot"></span>
+                  Live Lens
+                </div>
+                <div class="device-body">
+                  <div class="bottle-card">
+                    <span class="label">Château Lumière</span>
+                    <span class="tag">Bordeaux · 2021</span>
+                  </div>
+                  <p class="tasting-note">
+                    "Silkeslen struktur med mörka körsbär, viol och en elegant ton av ceder. Serveras bäst vid 16°C tillsammans med lamm." 
+                  </p>
+                  <div class="device-actions">
+                    <button type="button">Spara</button>
+                    <button type="button">Dela</button>
+                    <button type="button">Para</button>
+                  </div>
+                </div>
+              </div>
+              <div class="floating-card tasting-card" aria-hidden="true">
+                <h3>Snabb summering</h3>
+                <ul>
+                  <li><strong>Druva:</strong> Cabernet Franc</li>
+                  <li><strong>Smaker:</strong> Körsbär · Vanilj · Viol</li>
+                  <li><strong>Passar:</strong> Lamm, svamp-risotto</li>
+                </ul>
+              </div>
+              <div class="floating-card rating-card" aria-hidden="true">
+                <span class="score">4.9</span>
+                <span class="caption">Gemini-insikter</span>
+                <span class="sub">Kalibrerad mot samma modell som Wine Lens Snap</span>
+              </div>
+            </div>
+            <figcaption id="hero-visual-caption">Visuellt gränssnitt speglat från Wine Lens Snap.</figcaption>
+          </div>
         </div>
       </section>
 
-      <section class="feature-grid" id="funktioner">
+      <section class="lens-showcase" id="funktioner">
         <div class="container">
-          <h2>Varför vinälskare väljer Wine Snap</h2>
-          <p class="section-intro">
-            Varje del av appen är utformad för att efterlikna den upplevelse du älskar i Wine Lens Snap – nu optimerad för högre tydlighet, varmare ton och mer vibrerande accentfärger.
-          </p>
-          <div class="grid">
-            <article class="feature-card">
-              <div class="icon-badge" aria-hidden="true">🍷</div>
-              <h3>Smart vinanalys</h3>
-              <p>
-                Identifiera druvor, region och smakprofil med hjälp av Gemini – samma motor som driver vår systerapp Wine Lens Snap.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="icon-badge" aria-hidden="true">📸</div>
-              <h3>Live Lens</h3>
-              <p>
-                Få direkta resultat i AR-läge. Uppdaterad UI med mjuka skuggor och ljust glas inspirerat av Wine Lens Snap.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="icon-badge" aria-hidden="true">🤝</div>
-              <h3>Sociala notiser</h3>
-              <p>
-                Följ vänner och sommeliers, dela provningar och spara favoriter till din vinkarta i realtid.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="icon-badge" aria-hidden="true">🍽️</div>
-              <h3>Perfekta parningar</h3>
-              <p>
-                Matcha rätter med rekommendationer finjusterade av AI som lär sig dina preferenser över tid.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="demo" id="demo">
-        <div class="container demo-layout">
-          <div class="demo-copy">
-            <h2>Se den nya Lens-upplevelsen i rörelse</h2>
+          <div class="section-heading">
+            <span class="eyebrow">Lens-läge</span>
+            <h2>Replikerad layout, exakt samma interaktioner</h2>
             <p>
-              Vi har återskapat Wine Lens Snap-frontenden med samma glas-effekter, varma gradienter och modulära kort. Animationerna är uppdaterade för 60 fps och subtil haptik.
+              Paneler, typografi och ikonografi matchar Wine Lens Snap komponent för komponent. Varje kort använder samma glasblanka material med varma accenter.
             </p>
-            <ul class="demo-list" role="list">
-              <li><strong>Steg 1:</strong> Rikta kameran mot etiketten.</li>
-              <li><strong>Steg 2:</strong> Få AI-analys på en sekund.</li>
-              <li><strong>Steg 3:</strong> Spara, dela eller hitta en matmatchning.</li>
-            </ul>
-            <a class="ghost-button" href="#community">Utforska communityt</a>
           </div>
-          <div class="demo-preview" aria-hidden="true">
-            <div class="preview-card">
-              <div class="preview-header">
-                <span class="status-dot"></span>
-                Live Lens
-              </div>
-              <div class="preview-body">
-                <div class="preview-bottle">
-                  <span>Château Lumière 2021</span>
-                  <span class="tag">Bordeaux</span>
-                </div>
-                <p>
-                  “Elegant bouquet med toner av körsbär, viol och subtil ek. Bäst vid 16°C tillsammans med lamm.”
-                </p>
-                <div class="preview-footer">
-                  <button type="button">Spara</button>
-                  <button type="button">Dela</button>
-                  <button type="button">Para</button>
-                </div>
-              </div>
-            </div>
+          <div class="lens-grid">
+            <article class="lens-card">
+              <header>
+                <span class="icon">📸</span>
+                <h3>Live-sökning</h3>
+              </header>
+              <p>Kameraflödet ligger på en mjuk gradientbakgrund med realtidsmarkörer som följer etikettens konturer.</p>
+              <footer>Snabbare initiering och exakt fokusruta.</footer>
+            </article>
+            <article class="lens-card">
+              <header>
+                <span class="icon">🧠</span>
+                <h3>AI-förklaringar</h3>
+              </header>
+              <p>Gemini-modellen återger samma konversationskort som i Wine Lens Snap – nu med lokala språkpaket.</p>
+              <footer>Genererade svar i realtid.</footer>
+            </article>
+            <article class="lens-card">
+              <header>
+                <span class="icon">📂</span>
+                <h3>Samlingar</h3>
+              </header>
+              <p>Glasiga kort med etikettbilder och smakprofiler. Drag &amp; drop mellan mappar fungerar identiskt.</p>
+              <footer>Synkas mot molnet på sekunder.</footer>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="experience" id="experiences">
-        <div class="container">
-          <h2>Mer än en vinscanner – en hel upplevelse</h2>
-          <div class="experience-grid">
-            <article class="experience-card">
-              <h3>AI-Sommelier 24/7</h3>
-              <p>
-                Ställ frågor om lagring, serveringstemperaturer och årgångar. Du får samma konverserande assistent som i Wine Lens Snap, nu med förbättrad kontext.
-              </p>
-            </article>
-            <article class="experience-card">
-              <h3>Scenarion</h3>
-              <p>
-                Skapa middagsscener, picnic-planer eller vinprovningar. UI:t skiftar färgtema och ikonografi för att passa tillfället.
-              </p>
-            </article>
-            <article class="experience-card">
-              <h3>Offline-läge</h3>
-              <p>
-                Ladda ned databaser för resor. Den uppdaterade designen gör det tydligt när informationen är synkad lokalt.
-              </p>
-            </article>
+      <section class="experience" id="upplevelse">
+        <div class="container experience-layout">
+          <div class="experience-copy">
+            <span class="eyebrow">Upplevelsen</span>
+            <h2>Modulärt flöde för provningar, resor och middagar</h2>
+            <p>
+              De scenbaserade layouterna följer Wine Lens Snap-formatet. Skapa ett scenario, välj teman och få en personlig plan med färgskiftningar och ambient-ljud.
+            </p>
+            <ul class="experience-list" role="list">
+              <li>
+                <strong>Provningsläge:</strong> Visa vertikal flight med smakjämförelser och temperaturkort.
+              </li>
+              <li>
+                <strong>Resekarta:</strong> Planera vingårdsbesök i ett rutnät med interaktiva kartor och badges.
+              </li>
+              <li>
+                <strong>Matmatchning:</strong> Få parningsförslag med bilder, filterchips och rekommenderade glas.</li>
+            </ul>
+          </div>
+          <div class="experience-visual" aria-hidden="true">
+            <div class="stack-card card-primary">
+              <h3>Provning "Kust mot Inland"</h3>
+              <ul>
+                <li>Loire Chenin · Citrus &amp; krita</li>
+                <li>Santa Barbara Chardonnay · Tropisk frukt</li>
+                <li>Etna Bianco · Salt mineralitet</li>
+              </ul>
+            </div>
+            <div class="stack-card card-secondary">
+              <h4>Scenario-teman</h4>
+              <p>Varma gradienter, mjuka skuggor och dynamiska blur-effekter – identiska med originalet.</p>
+              <div class="chip-row">
+                <span class="chip">Kväll</span>
+                <span class="chip">Utomhus</span>
+                <span class="chip">8 gäster</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -184,39 +198,36 @@
       <section class="community" id="community">
         <div class="container community-layout">
           <div class="community-copy">
-            <h2>Byggt för communityt</h2>
+            <span class="eyebrow">Community</span>
+            <h2>Allt socialt innehåll importerat från Wine Lens Snap</h2>
             <p>
-              Precis som i Wine Lens Snap lyfter vi fram människorna bakom smaknoterna. Följ klubbar, delta i live-sessioner och samla märken.
+              Dela provningar, följ klubbar och samla badges. UI:t använder samma modul med gradientramar och mjuka avatar-ringar.
             </p>
-            <div class="community-highlights">
-              <article>
+            <div class="community-badges">
+              <div class="badge-card">
                 <h3>Klubbar</h3>
-                <p>Gå med i lokala och globala klubbar. Styrd av anpassade färgteman och emojis.</p>
-              </article>
-              <article>
+                <p>Lokala och globala rum med kuraterade teman. Identiska kalenderkort och RSVP-flöden.</p>
+              </div>
+              <div class="badge-card">
                 <h3>Utmaningar</h3>
-                <p>Samla veckovisa achievements och lås upp exklusiva provningskit.</p>
-              </article>
-              <article>
-                <h3>Story Mode</h3>
-                <p>Dela minnen från resor, lagring och provningar i ett filmiskt flöde.</p>
-              </article>
+                <p>Veckovisa achievements, progressringar och trofékort med glow-effekter.</p>
+              </div>
             </div>
           </div>
-          <aside class="community-card" aria-label="Live-evenemang">
+          <aside class="community-events" aria-label="Kommande evenemang">
             <h3>Live denna vecka</h3>
-            <ul role="list">
+            <ul>
               <li>
-                <strong>Masterclass:</strong>
-                <span>Biodynamiska pärlor från Loire</span>
+                <span class="label">Masterclass</span>
+                <span class="value">Biodynamiska pärlor från Loire</span>
               </li>
               <li>
-                <strong>After Work:</strong>
-                <span>Orangeviner med Matilda</span>
+                <span class="label">After Work</span>
+                <span class="value">Orangeviner med Matilda</span>
               </li>
               <li>
-                <strong>Provningsduell:</strong>
-                <span>Napa vs Barossa blindtest</span>
+                <span class="label">Provningsduell</span>
+                <span class="value">Napa vs Barossa blindtest</span>
               </li>
             </ul>
             <button type="button">Reservera plats</button>
@@ -226,9 +237,10 @@
 
       <section class="cta" id="ladda-ner">
         <div class="container cta-content">
+          <span class="eyebrow">Redo att skanna</span>
           <h2>Upplev Wine Snap idag</h2>
           <p>
-            Designen är synkad med Wine Lens Snap för en familjär känsla – men med helt nya animationer, färggraderingar och typografi.
+            Hela gränssnittet är klonat från Wine Lens Snap för att kännas omedelbart bekant. Nu tillgängligt för Google-enheter med optimerad rendering och haptik.
           </p>
           <div class="cta-actions">
             <a class="cta-button primary" href="#">Hämta för iOS</a>
@@ -244,10 +256,10 @@
           <span class="brand-icon" aria-hidden="true"></span>
           <span class="brand-text">Wine Snap</span>
         </div>
-        <p>© <span id="year"></span> Wine Snap. Skapat med samma kärlek och precision som Wine Lens Snap.</p>
+        <p>© <span id="year"></span> Wine Snap. Replikerad med samma kärlek som Wine Lens Snap.</p>
         <div class="footer-links">
           <a href="#">Integritet</a>
-          <a href="#">Användarvillkor</a>
+          <a href="#">Villkor</a>
           <a href="#">Support</a>
         </div>
       </div>
